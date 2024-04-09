@@ -32,13 +32,19 @@ A stored procedure is a prepared SQL code that you can save, reuse, and share. I
 
 **Example: Creating a Stored Procedure**
 ```sql
+-- Change the delimiter to //
+DELIMITER //
+
 -- Creating a stored procedure to retrieve employee details by ID
 CREATE PROCEDURE GetEmployeeDetails(IN empID INT)
 BEGIN
     SELECT emp_name, emp_department
     FROM Employees
     WHERE emp_id = empID;
-END;
+END//
+
+-- Reset the delimiter back to ;
+DELIMITER ;
 ```
 
 ### Functions
